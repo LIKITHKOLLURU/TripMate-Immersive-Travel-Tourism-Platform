@@ -15,4 +15,4 @@ It integrates **3D virtual exploration**, **AI-based itinerary planning**, **sec
 | **Database** | MongoDB Atlas |
 | **Payments** | Razorpay Payment Gateway |
 | **AI Features** | Custom AI itinerary generation (Python API or integrated model endpoint) |
-| **Hosting/Deployment** | Vercel (Frontend), Render/Heroku (Backend), MongoDB Atlas (Database) |
+
