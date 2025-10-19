@@ -25,7 +25,7 @@ export default function PreviewPage() {
 
       <main style={{ flex: 1 }}>
         {place.type === 'streetview' ? (
-          <div style={{ height: '100%', width: '100%' }}>
+          <div style={{ height: '100%', width: '100%', position: 'relative' }}>
             <iframe
               src={place.file}
               width="100%"
@@ -34,6 +34,8 @@ export default function PreviewPage() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
+              title={`Street View of ${place.name}`}
+              onError={(e) => console.error('Street View iframe error:', e)}
             />
           </div>
         ) : (

@@ -107,10 +107,11 @@ const AICompanion = () => {
         () => setIsLoading(false)
       );
     } catch (err) {
+      console.error('AI Chatbot Error:', err);
       const aiMsg = {
         id: userMsg.id + 1,
         type: 'ai' as const,
-        content: 'Sorry, I could not reach the AI service right now. Please check your internet connection or API key and try again.',
+        content: '⚠️ **AI Service Error**\n\nI could not reach the AI service. Please ensure:\n\n1. You have set `VITE_GEMINI_API_KEY` in your `.env` file\n2. Get your API key from: https://makersuite.google.com/app/apikey\n3. Restart the dev server after adding the key\n4. Check your internet connection',
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       };
       setMessages(prev => [...prev, aiMsg]);

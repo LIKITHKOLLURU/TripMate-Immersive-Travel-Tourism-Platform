@@ -5,6 +5,7 @@ const API_KEY = import.meta.env.VITE_GEMINI_API_KEY as string | undefined;
 if (!API_KEY) {
   // Do not throw to avoid crashing dev; caller can handle graceful error
   console.warn('[Gemini] Missing VITE_GEMINI_API_KEY. Add it to your .env file.');
+  console.warn('[Gemini] Get your API key from: https://makersuite.google.com/app/apikey');
 }
 
 const genAI = API_KEY ? new GoogleGenerativeAI(API_KEY) : undefined;
